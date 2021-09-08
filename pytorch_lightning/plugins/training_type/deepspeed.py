@@ -18,7 +18,7 @@ import os
 import platform
 from collections import OrderedDict
 from pathlib import Path
-from typing import Any, Callable, Dict, Genrator, List, Mapping, Optional, Tuple, Union
+from typing import Any, Callable, Dict, Generator, List, Mapping, Optional, Tuple, Union
 
 import torch
 from torch.optim import Optimizer
@@ -826,4 +826,4 @@ class DeepSpeedPlugin(DDPPlugin):
         return self.model(*args, **kwargs)
 
     def predict_step(self, *args, **kwargs):
-        return self.model(*args, **kwargs)e
+        return self.model(*args, **kwargs)
