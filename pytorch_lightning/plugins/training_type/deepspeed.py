@@ -666,6 +666,10 @@ class DeepSpeedPlugin(DDPPlugin):
     def deepspeed_engine(self):
         return self.model
 
+    @property
+    def _multi_device(self) -> bool:
+        return self.num_processes > 1 or self.num_nodes > 1
+
     def save_checkpoint(self, checkpoint: Dict, filepath: str) -> None:
         """Save model/training states as a checkpoint file through state-dump and file-write.
 
