@@ -2,32 +2,36 @@
 .DS_Store
 run_configs/
 model_weights/
-app/models/
 pip-wheel-metadata/
 lightning_logs/
 .vscode/
 
-# Test-tube
-test_tube_*/
-
 # Documentations
-docs/source/api
-docs/source/*.md
-docs/source/generated
-docs/source/*/generated
-docs/source/notebooks
-docs/source/_static/images/course_UvA-DL
-docs/source/_static/images/lightning_examples
+docs/venv*/
+docs/build*/
+docs/source-fabric/_static/fetched-s3-assets
+docs/source-pytorch/api
+docs/source-pytorch/*.md
+docs/source-pytorch/generated
+docs/source-pytorch/*/generated
+docs/source-pytorch/notebooks
+docs/source-pytorch/_static/images/course_UvA-DL
+docs/source-pytorch/_static/images/lightning_examples
+docs/source-pytorch/_static/fetched-s3-assets
+docs/source-pytorch/integrations/hpu
+docs/source-pytorch/integrations/strategies/Hivemind.rst
 
+docs/source-fabric/*/generated
+
+# C extensions
+*.so
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 timit_data/
-
-
-# C extensions
-*.so
+grid_generated*
+grid_ori*
 
 # PyCharm
 .idea/
@@ -50,6 +54,17 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+src/*/version.info
+src/lightning_fabric/*
+src/pytorch_lightning/*
+!src/*/__about__.py
+!src/*/__main__.py
+!src/*/__setup__.py
+!src/*/__version__.py
+!src/*/MANIFEST.in
+!src/*/py.typed
+!src/*/README.md
+!src/*/shell-folder_code-lives-lightning.info
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -63,7 +78,6 @@ pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
-.tox/
 .coverage
 .coverage.*
 .cache
@@ -110,6 +124,8 @@ celerybeat-schedule
 
 # dotenv
 .env
+.env.staging
+.env.local
 
 # virtualenv
 .venv
@@ -131,19 +147,23 @@ ENV/
 .mypy_cache/
 # pytest
 .pytest_cache/
+# ruff
+.ruff_cache/
 
 # data
 .data/
 Datasets/
 mnist/
-legacy/checkpoints/
+MNIST/
+tests/legacy/checkpoints/
+*.gz
+*ubyte
 
 # pl tests
 ml-runs/
 mlruns/
 *.zip
 *.ckpt
-pytorch\ lightning
 test-reports/
 wandb
 .forked/
@@ -156,3 +176,33 @@ cifar-10-batches-py
 *.pt
 # ctags
 tags
+.tags
+*examples/template_react_ui*
+hars*
+artifacts/*
+*docs/examples*
+
+# tutorials
+our_model.tar
+test.png
+saved_models
+data/
+!examples/data/
+!tests/tests_pytorch/utilities/data/
+!requirements/data/
+.shared
+.lightning
+node_modules/
+
+# examples
+**/events.out.tfevents.*
+examples/**/*.png
+
+# instalation artifacts
+requirements/base.txt
+
+# CI
+.wheels/
+
+# sourced notebooks from tutorials
+_notebooks/.notebooks/
